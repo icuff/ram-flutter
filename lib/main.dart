@@ -39,6 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void start() {
+    DateTime begin = DateTime.now();
     setState(() {
       _btnVisible = false;
       _txtVisible = true;
@@ -58,8 +59,10 @@ class _MyHomePageState extends State<MyHomePage> {
       });
     }
 
+    DateTime end = DateTime.now();
+    String duration = end.difference(begin).inMilliseconds.toString();
     setState(() {
-      _statusTxt = 'Finished';
+      _statusTxt = 'Finished in ' + duration + 'ms';
     });
 
   }
